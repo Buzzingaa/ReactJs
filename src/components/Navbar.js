@@ -33,7 +33,3 @@ Navbar.prototype={
     title: PropTypes.string.isRequired,
     aboutText: PropTypes.number
   }
-  Navbar.defaultProps ={
-    title:"TextSearch",
-    aboutText:"About TextUtils"
-  }
