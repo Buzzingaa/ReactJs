@@ -7,6 +7,7 @@ export default function Textform(props) {
     const handelOnCLick = ()=> {
         console.log("you clicked the button");
         setText(upperText);
+        props.showAlert('Converted to upperCase','success')
     }
     const handleOnChange = (event)=> {
         console.log("onChange");
@@ -14,12 +15,13 @@ export default function Textform(props) {
     }
     const handleLowClick=()=>{
       setText(text.toLowerCase())
+      props.showAlert('Converted to lowerCase','success')
     }
     const speak = () => {
       let msg = new SpeechSynthesisUtterance(text);
       window.speechSynthesis.speak(msg);
       const toogle = document.getElementById('toggle')
-      if (toogle.textContent == "Speak") {
+      if (toogle.textContent === "Speak") {
           toogle.innerHTML = "Stop"
       }
       else {
@@ -51,7 +53,7 @@ export default function Textform(props) {
       <p>{text.split(" ").length} words and {text.length} characters</p>
       <p> {0.008*text.split(" ").length } minute read</p>
       <h2>Priview</h2>
-      <p>{text==''?'write the text above to see priview':text}</p>
+      <p>{text===''?'write the text above to see priview':text}</p>
 
     </div>
     
